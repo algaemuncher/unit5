@@ -41,7 +41,7 @@ void setup() {
   defeat = new SoundFile(this, "anti-yt-shorts.mp3");
   vx = 8;
   vy = 8;
-  bspeed = 20;
+  bspeed = 18;
 }
 
 void draw() {
@@ -61,8 +61,8 @@ void ball() {
     noStroke();
     fill(255, 0, 0);
     circle(ballx, bally, balld);
-    circle((ballx- bx*j)+ (cos(acos(bx/bspeed) +(PI/4))*bspeed*j), (bally-by*j)+ (sin(asin(by/bspeed) +(PI/4))*bspeed*j), balld);
-    circle((ballx- bx*j)+ (cos(acos(bx/bspeed) -(PI/4))*bspeed*j), (bally-by*j)+ (sin(asin(by/bspeed) -(PI/4))*bspeed*j), balld);
+    circle((ballx- bx*j)+ (cos(acos(bx/bspeed) +(PI/6))*bspeed*j), (bally-by*j)+ (sin(asin(by/bspeed) +(PI/6))*bspeed*j), balld);
+    circle((ballx- bx*j)+ (cos(acos(bx/bspeed) -(PI/6))*bspeed*j), (bally-by*j)+ (sin(asin(by/bspeed) -(PI/6))*bspeed*j), balld);
     //println((ballx- bx*j)+ (cos(acos(bx/15) +(PI/4))*20*j));
     //circle(shooting player coordinates) + (original ball angle ± new ball angle adjustment) * speed * frame # after shoot, ball diameter;
     //^^^ circle((ballx- bx*j)+cos(bx/15+(PI/4))*15*j, (bally-by*j)+sin(bx/15+(PI/4))*15*j, balld);
@@ -82,11 +82,11 @@ void ball() {
       gamestate = game_over;
       k=0;
       l=255;
-    } else if (dist((ballx- bx*j)+ (cos(acos(bx/bspeed) +(PI/4))*bspeed*j), (bally-by*j)+ (sin(asin(by/bspeed) +(PI/4))*bspeed*j), player1x, player1y) < player1d/2 + balld/2) {
+    } else if (dist((ballx- bx*j)+ (cos(acos(bx/bspeed) +(PI/6))*bspeed*j), (bally-by*j)+ (sin(asin(by/bspeed) +(PI/6))*bspeed*j), player1x, player1y) < player1d/2 + balld/2) {
       gamestate = game_over;
       k=0;
       l=255;
-    } else if (dist((ballx- bx*j)+ (cos(acos(bx/bspeed) -(PI/4))*bspeed*j), (bally-by*j)+ (sin(asin(by/bspeed) -(PI/4))*bspeed*j), player1x, player1y) < player1d/2 + balld/2) {
+    } else if (dist((ballx- bx*j)+ (cos(acos(bx/bspeed) -(PI/6))*bspeed*j), (bally-by*j)+ (sin(asin(by/bspeed) -(PI/6))*bspeed*j), player1x, player1y) < player1d/2 + balld/2) {
       gamestate = game_over;
       k=0;
       l=255;
@@ -97,11 +97,11 @@ void ball() {
       gamestate = game_over;
       k=0;
       l=255;
-    } else if (dist((ballx- bx*j)+ (cos(acos(bx/bspeed) +(PI/4))*bspeed*j), (bally-by*j)+ (sin(asin(by/bspeed) +(PI/4))*bspeed*j), player2x, player2y) < player2d/2 + balld/2) {
+    } else if (dist((ballx- bx*j)+ (cos(acos(bx/bspeed) +(PI/6))*bspeed*j), (bally-by*j)+ (sin(asin(by/bspeed) +(PI/6))*bspeed*j), player2x, player2y) < player2d/2 + balld/2) {
       gamestate = game_over;
       k=0;
       l=255;
-    } else if (dist((ballx- bx*j)+ (cos(acos(bx/bspeed) -(PI/4))*bspeed*j), (bally-by*j)+ (sin(asin(by/bspeed) -(PI/4))*bspeed*j), player2x, player2y) < player2d/2 + balld/2) {
+    } else if (dist((ballx- bx*j)+ (cos(acos(bx/bspeed) -(PI/6))*bspeed*j), (bally-by*j)+ (sin(asin(by/bspeed) -(PI/6))*bspeed*j), player2x, player2y) < player2d/2 + balld/2) {
       gamestate = game_over;
       k=0;
       l=255;
